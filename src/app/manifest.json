@@ -1,0 +1,21 @@
+{
+  "name": "Andrew Alexeyev - Senior Product Designer",
+  "short_name": "Andrew Alexeyev",
+  "description": "Portfolio of Andrew Alexeyev, Senior Product Designer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E1E1E",
+  "theme_color": "#6EE7B7",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
