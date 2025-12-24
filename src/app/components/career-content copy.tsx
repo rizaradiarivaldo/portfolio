@@ -124,8 +124,8 @@ export function CareerContent() {
     <motion.section className="relative flex min-h-screen flex-col px-6 py-12 md:px-12 lg:px-16" variants={containerVariants} initial="hidden" animate="visible">
       {/* Email - Top Right */}
       <motion.div className="mb-8 flex justify-end" variants={itemVariants}>
-        <Link href="mailto:idrewha@gmail.com" className="text-sm text-muted-foreground transition-colors hover:text-primary md:text-base">
-          idrewha@gmail.com
+        <Link href="mailto:rizaradiarivaldo@gmail.com" className="text-sm text-muted-foreground transition-colors hover:text-primary md:text-base">
+          rizaradiarivaldo@gmail.com
         </Link>
       </motion.div>
 
@@ -220,8 +220,8 @@ export function CareerContent() {
         {/* Bottom Section */}
         <div className="grid grid-cols-3 items-end gap-4 pt-12">
           <Button size="lg" className="group gap-2 rounded-full px-6 py-6 text-sm font-medium shadow-lg transition-all hover:shadow-xl hover:shadow-primary/20 md:text-base" asChild>
-            <Link href="https://t.me/idrewha" target="_blank" rel="noopener noreferrer">
-              t.me/idrewha
+            <Link href="https://t.me/rizaradiarivaldo" target="_blank" rel="noopener noreferrer">
+              t.me/rizaradiarivaldo
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </Button>

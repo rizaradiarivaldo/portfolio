@@ -20,12 +20,12 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full max-w-2xl pt-12 mt-12">
           {/* Telegram */}
-          <a href="https://t.me/idrewha" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+          <a href="https://t.me/rizaradiarivaldo" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
             <Send className="w-6 h-6 text-white mt-0.5 flex-shrink-0" />
             <div className="flex flex-col items-start">
               <span className="text-white text-base mb-1">Telegram</span>
               <span className="text-[#4ADE80] text-sm group-hover:underline flex items-center gap-1">
-                @idrewha
+                @rizaradiarivaldo
                 <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 9L9 3M9 3H3.5M9 3V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -34,21 +34,21 @@ export default function Home() {
           </a>
 
           {/* Email */}
-          <a href="mailto:idrewha@gmail.com" className="flex items-start gap-4 group">
+          <a href="mailto:rizaradiarivaldo@gmail.com" className="flex items-start gap-4 group">
             <Mail className="w-6 h-6 text-white mt-0.5 flex-shrink-0" />
             <div className="flex flex-col items-start">
               <span className="text-white text-base mb-1">Mail</span>
-              <span className="text-[#4ADE80] text-sm group-hover:underline">idrewha@gmail.com</span>
+              <span className="text-[#4ADE80] text-sm group-hover:underline">rizaradiarivaldo@gmail.com</span>
             </div>
           </a>
 
           {/* LinkedIn */}
-          <a href="https://linkedin.com/in/idrewha" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+          <a href="https://linkedin.com/in/rizaradiarivaldo" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
             <Linkedin className="w-6 h-6 text-white mt-0.5 flex-shrink-0" />
             <div className="flex flex-col items-start">
               <span className="text-white text-base mb-1">LinkedIn</span>
               <span className="text-[#4ADE80] text-sm group-hover:underline flex items-center gap-1">
-                @idrewha
+                @rizaradiarivaldo
                 <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 9L9 3M9 3H3.5M9 3V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

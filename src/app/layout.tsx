@@ -8,22 +8,22 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Andrew Alexeyev - Senior Product Designer Portfolio",
-  description: "Portfolio of Andrew Alexeyev, a Senior Product Designer specializing in user-centered design and digital experiences. View my work and get in touch.",
-  keywords: ["Product Designer", "UI/UX Design", "Portfolio", "Andrew Alexeyev", "Senior Designer", "Digital Design"],
-  authors: [{ name: "Andrew Alexeyev" }],
-  creator: "Andrew Alexeyev",
+  title: "Riza Radia Rivaldo - Software Engineer Frontend 2",
+  description: "I am a professional Frontend Software Engineer. I have a high curiosity about technological advances and developments. Experienced in creating and developing Website projects using Tech Stack: React, Next, Vue, Nuxt, With Javascript | Typescript, etc.",
+  keywords: ["Riza Radia Rivaldo", "Software Engineer Frontend 2", "Frontend Engineer", "Frontend Developer", "Frontend Software Engineer", "Web Developer", "Web Engineer", "React Developer", "Next.js Developer", "Vue Developer", "Nuxt Developer", "JavaScript Developer", "TypeScript Developer"],
+  authors: [{ name: "Riza Radia Rivaldo" }],
+  creator: "Riza Radia Rivaldo",
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Andrew Alexeyev - Senior Product Designer",
-    description: "Portfolio of Andrew Alexeyev, Senior Product Designer",
-    siteName: "Andrew Alexeyev Portfolio",
+    title: "Riza Radia Rivaldo - Software Engineer Frontend",
+    description: "Portfolio of Riza Radia Rivaldo, Software Engineer Frontend",
+    siteName: "Riza Radia Rivaldo Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Andrew Alexeyev - Senior Product Designer",
-    description: "Portfolio of Andrew Alexeyev, Senior Product Designer",
+    title: "Riza Radia Rivaldo - Software Engineer Frontend",
+    description: "Portfolio of Riza Radia Rivaldo, Software Engineer Frontend",
   },
   robots: {
     index: true,

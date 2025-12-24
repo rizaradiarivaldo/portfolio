@@ -1,11 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { PageNavigation } from "@/components/page-navigation"
-import { motion, AnimatePresence, type Variants } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 
 type CareerPosition = {
   company: string
@@ -23,6 +21,7 @@ const careerData: CareerPosition[] = [
     role: "Senior Associate Front End Developer",
     duration: "Des 2022 - Saat ini · 3 thn 1 bln",
     location: "Jakarta Selatan, Jakarta Raya, Indonesia · Di lokasi",
+    employmentType: "Full Time",
     skills: ["Next.js", "TypeScript"],
   },
   {
@@ -30,6 +29,7 @@ const careerData: CareerPosition[] = [
     role: "Front End Developer",
     duration: "Des 2021 - Nov 2022 · 1 thn",
     location: "Jakarta Selatan, Jakarta Raya, Indonesia",
+    employmentType: "Full Time",
     skills: ["JavaScript", "Tailwind CSS", "+5 keahlian"],
   },
   {
@@ -37,7 +37,7 @@ const careerData: CareerPosition[] = [
     role: "Frontend Facilitator",
     duration: "Des 2023 - Des 2023 · 1 bln",
     location: "Jarak jauh",
-    employmentType: "Pekerja Lepas",
+    employmentType: "Freelance",
     skills: ["HTML", "Cascading Style Sheets (CSS)", "+1 keahlian"],
   },
   {
@@ -45,7 +45,7 @@ const careerData: CareerPosition[] = [
     role: "Freelance Software Engineer",
     duration: "Apr 2022 - Agu 2022 · 5 bln",
     location: "Jarak jauh",
-    employmentType: "Pekerja Lepas",
+    employmentType: "Freelance",
     skills: ["Vue.js", "JavaScript", "+7 keahlian"],
   },
   {
@@ -53,7 +53,7 @@ const careerData: CareerPosition[] = [
     role: "Full Stack Website Developer",
     duration: "Nov 2020 - Nov 2021 · 1 thn 1 bln",
     location: "Jakarta Selatan, Jakarta Raya, Indonesia",
-    employmentType: "Purnawaktu",
+    employmentType: "Full Time",
     skills: ["JavaScript", "HTML", "+4 keahlian"],
   },
 ]
@@ -81,51 +81,13 @@ const itemVariants: Variants = {
   },
 }
 
-const slideVariants: Variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 300 : -300,
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-  exit: (direction: number) => ({
-    x: direction < 0 ? 300 : -300,
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  }),
-}
-
 export function CareerContent() {
-  const [currentPage, setCurrentPage] = useState(0)
-  const [[page, direction], setPage] = useState([0, 0])
-
-  const handlePrevious = () => {
-    const newPage = Math.max(0, currentPage - 1)
-    setPage([newPage, -1])
-    setCurrentPage(newPage)
-  }
-
-  const handleNext = () => {
-    const newPage = Math.min(careerData.length - 1, currentPage + 1)
-    setPage([newPage, 1])
-    setCurrentPage(newPage)
-  }
-
   return (
-    <motion.section className="relative flex min-h-screen flex-col px-6 py-12 md:px-12 lg:px-16" variants={containerVariants} initial="hidden" animate="visible">
+    <motion.section className="relative flex min-h-screen flex-col px-6 py-8 md:px-12 lg:px-16" variants={containerVariants} initial="hidden" animate="visible">
       {/* Email - Top Right */}
       <motion.div className="mb-8 flex justify-end" variants={itemVariants}>
-        <Link href="mailto:idrewha@gmail.com" className="text-sm text-muted-foreground transition-colors hover:text-primary md:text-base">
-          idrewha@gmail.com
+        <Link href="mailto:rizaradiarivaldo@gmail.com" className="text-sm text-muted-foreground transition-colors hover:text-primary md:text-base">
+          rizaradiarivaldo@gmail.com
         </Link>
       </motion.div>
 
@@ -139,10 +101,10 @@ export function CareerContent() {
         {/* Timeline Container */}
         <div className="relative flex-1">
           <motion.div className="hidden lg:block" variants={itemVariants}>
-            <div className="relative overflow-x-auto pb-8">
-              <div className="inline-flex min-w-max gap-16 px-4">
+            <div className="relative overflow-x-auto pb-8 scroll-smooth scrollbar-hide">
+              <div className="inline-grid min-w-max grid-flow-col auto-cols-[20rem] gap-16 px-4">
                 {careerData.map((position, index) => (
-                  <div key={index} className="relative flex w-80 flex-col">
+                  <div key={index} className="relative grid w-80 grid-rows-[auto_auto_1fr]">
                     {/* Company and Role Info */}
                     <div className="space-y-2">
                       {position.companyLink ? (
@@ -159,10 +121,14 @@ export function CareerContent() {
                       <p className="text-xs text-muted-foreground/60">{position.location}</p>
                     </div>
 
-                    {/* Timeline Dot and Line */}
+                    {/* Timeline Dot and Connected Line */}
                     <div className="relative my-8 flex items-center">
-                      <div className="h-3 w-3 rounded-full bg-primary" />
-                      {index < careerData.length - 1 && <div className="absolute left-3 h-0.5 w-full bg-muted" />}
+                      <div className={`relative z-10 h-3 w-3 rounded-full ${index === 0 ? "bg-primary" : "bg-muted-foreground"}`}>
+                        <div className={`z-10 h-3 w-3 rounded-full ${index === 0 && "ring-4 ring-primary/20 animate-ping animation-duration-[1s]"}`} />
+                      </div>
+
+                      {/* {index < careerData.length - 1 && <div className="absolute left-0 right-[-4.5rem] top-1/2 h-0.5 -translate-y-1/2 bg-muted" aria-hidden />} */}
+                      <div className="absolute left-0 -right-18 top-1/2 h-0.5 -translate-y-1/2 bg-muted" aria-hidden />
                     </div>
 
                     {/* Skills Tags */}
@@ -181,71 +147,57 @@ export function CareerContent() {
             <div className="flex justify-center text-xs text-muted-foreground/50">Scroll horizontal untuk melihat semua →</div>
           </motion.div>
 
-          {/* Mobile/Tablet: Carousel View */}
+          {/* Mobile/Tablet: Vertical Timeline */}
           <div className="block lg:hidden">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-              <motion.div key={page} custom={direction} variants={slideVariants} initial="enter" animate="center" exit="exit" className="space-y-8">
-                <div className="space-y-2">
-                  {careerData[currentPage].companyLink ? (
-                    <Link href={careerData[currentPage].companyLink} className="inline-flex items-center gap-2 text-3xl font-semibold hover:text-primary md:text-4xl">
-                      {careerData[currentPage].company}
-                      <ExternalLink className="h-6 w-6" />
-                    </Link>
-                  ) : (
-                    <h2 className="text-3xl font-semibold md:text-4xl">{careerData[currentPage].company}</h2>
-                  )}
-                  <p className="text-lg text-muted-foreground">{careerData[currentPage].role}</p>
-                  {careerData[currentPage].employmentType && <p className="text-base text-muted-foreground/80">{careerData[currentPage].employmentType}</p>}
-                  <p className="text-base text-muted-foreground/70">{careerData[currentPage].duration}</p>
-                  <p className="text-sm text-muted-foreground/60">{careerData[currentPage].location}</p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-primary" />
-                  <div className="h-0.5 flex-1 bg-muted" />
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {careerData[currentPage].skills.map((skill, index) => (
-                    <div key={index} className="rounded-lg border border-border bg-card px-4 py-3 text-sm transition-colors hover:border-primary/50">
-                      {skill}
+            <div className="relative pl-[calc(var(--spacing)*8.2)]">
+              <div className="absolute left-4 top-3 bottom-3 w-px bg-muted" aria-hidden />
+              <div className="space-y-6">
+                {careerData.map((position, index) => (
+                  <motion.div key={index} className="relative rounded-xl border border-border/70 bg-card/70 p-4 shadow-sm backdrop-blur" variants={itemVariants}>
+                    <div className="absolute -left-6 top-5 flex items-center">
+                      <div className={`h-3.5 w-3.5 rounded-full border-2 border-background ${index === 0 ? "bg-primary" : "bg-muted-foreground/40"}`}>
+                        <div className={`h-3.5 w-3.5 rounded-full border-2 ${index === 0 && "ring-4 ring-primary/20 animate-ping"}`} />
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </motion.div>
-            </AnimatePresence>
+
+                    <div className="space-y-2">
+                      {position.companyLink ? (
+                        <Link href={position.companyLink} className="inline-flex items-center gap-2 text-xl font-semibold hover:text-primary">
+                          {position.company}
+                          <ExternalLink className="h-4 w-4" />
+                        </Link>
+                      ) : (
+                        <h2 className="text-xl font-semibold">{position.company}</h2>
+                      )}
+                      <p className="text-sm font-medium text-muted-foreground">{position.role}</p>
+                      {position.employmentType && <p className="text-xs uppercase tracking-wide text-muted-foreground/70">{position.employmentType}</p>}
+                      <p className="text-sm text-muted-foreground/70">{position.duration}</p>
+                      <p className="text-xs text-muted-foreground/60">{position.location}</p>
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {position.skills.map((skill, skillIndex) => (
+                        <span key={skillIndex} className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted-foreground">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-3 items-end gap-4 pt-12">
-          <Button size="lg" className="group gap-2 rounded-full px-6 py-6 text-sm font-medium shadow-lg transition-all hover:shadow-xl hover:shadow-primary/20 md:text-base" asChild>
-            <Link href="https://t.me/idrewha" target="_blank" rel="noopener noreferrer">
-              t.me/idrewha
-              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Button>
-
-          <div className="flex justify-center lg:hidden">
-            <div className="flex items-center justify-center gap-6">
-              <button onClick={handlePrevious} className="rounded-full p-2 text-muted-foreground/50 transition-colors hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-30" disabled={currentPage === 0} aria-label="Previous position">
-                <ChevronRight className="h-6 w-6 rotate-180" />
-              </button>
-              <button onClick={handleNext} className="rounded-full p-2 text-muted-foreground/50 transition-colors hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-30" disabled={currentPage === careerData.length - 1} aria-label="Next position">
-                <ChevronRight className="h-6 w-6" />
-              </button>
-            </div>
-          </div>
-
-          <div className="hidden lg:flex lg:justify-center">
-            <PageNavigation />
-          </div>
+        <div className="hidden pt-12 lg:flex lg:justify-center">
+          <PageNavigation />
         </div>
       </div>
 
       {/* Decorative gradient blur effect */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/3 top-1/3 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute left-1/3 top-1/3 h-125 w-125 rounded-full bg-primary/5 blur-3xl" />
       </div>
     </motion.section>
   )

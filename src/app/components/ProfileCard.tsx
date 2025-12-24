@@ -19,7 +19,7 @@ export function ProfileCard() {
         </motion.div>
 
         <motion.div variants={fadeUp} className="space-y-1">
-          <h1 className="text-2xl font-semibold text-white md:text-3xl">Andrew Alexeyev</h1>
+          <h1 className="text-2xl font-semibold text-white md:text-3xl">Riza Radia Rivaldo</h1>
           <p className="text-sm text-neutral-400 md:text-base">Senior Product Designer</p>
         </motion.div>
 

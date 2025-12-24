@@ -35,8 +35,8 @@ export function AboutContent() {
     <motion.section className="relative flex min-h-screen flex-col px-6 py-12 md:px-12 lg:px-16" variants={containerVariants} initial="hidden" animate="visible">
       {/* Email - Top Right */}
       <motion.div className="mb-8 flex justify-end" variants={itemVariants}>
-        <Link href="mailto:idrewha@gmail.com" className="text-sm text-muted-foreground transition-colors hover:text-primary md:text-base">
-          idrewha@gmail.com
+        <Link href="mailto:rizaradiarivaldo@gmail.com" className="text-sm text-muted-foreground transition-colors hover:text-primary md:text-base">
+          rizaradiarivaldo@gmail.com
         </Link>
       </motion.div>
 
@@ -49,13 +49,11 @@ export function AboutContent() {
           </motion.h1>
 
           <motion.div className="space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg" variants={itemVariants}>
-            <p>I am proud to share my achievements:</p>
+            <p>I am Riza Radia Rivaldo</p>
 
-            <p>
-              I redesigned the <span className="font-medium text-foreground">iGoods</span> app which became the number one grocery delivery app in Russia. My redesign increased the conversion rate for adding items to the cart by <span className="font-bold text-primary">70%</span>.
-            </p>
+            <p>I am a professional Frontend Software Engineer. I have a high curiosity about technological advances and developments. Experienced in creating and developing Website projects using Tech Stack: React, Next, Vue, Nuxt, With Javascript | Typescript, etc.</p>
 
-            <p>
+            {/* <p>
               I also worked on the ASO, which resulted in an increase in conversion from <span className="font-bold text-primary">40.3%</span> to <span className="font-bold text-primary">58.8%</span> with 300K MAU.
             </p>
 
@@ -69,14 +67,14 @@ export function AboutContent() {
                 Awwwards
               </Link>
               .
-            </p>
+            </p> */}
           </motion.div>
 
           {/* Telegram Button */}
           <motion.div className="pt-4" variants={itemVariants}>
             <Button size="lg" className="group gap-2 rounded-full px-6 py-6 text-sm font-medium shadow-lg transition-all hover:shadow-xl hover:shadow-primary/20 md:text-base" asChild>
-              <Link href="https://t.me/idrewha" target="_blank" rel="noopener noreferrer">
-                t.me/idrewha
+              <Link href="https://t.me/@rizaradiarivaldo" target="_blank" rel="noopener noreferrer">
+                t.me/@rizaradiarivaldo
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </Button>
@@ -86,7 +84,7 @@ export function AboutContent() {
         {/* Right Column - Peace Sign Image */}
         <motion.div className="relative flex items-center justify-center lg:justify-end" variants={itemVariants}>
           <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]">
-            <Image src="/images/rizar.png" alt="Peace sign hand gesture" fill className="object-contain" priority />
+            <Image src="/images/riza2.jpeg" alt="Peace sign hand gesture" fill className="object-contain" priority />
           </div>
         </motion.div>
       </div>
