@@ -52,22 +52,6 @@ export function AboutContent() {
             <p>I am Riza Radia Rivaldo</p>
 
             <p>I am a professional Frontend Software Engineer. I have a high curiosity about technological advances and developments. Experienced in creating and developing Website projects using Tech Stack: React, Next, Vue, Nuxt, With Javascript | Typescript, etc.</p>
-
-            {/* <p>
-              I also worked on the ASO, which resulted in an increase in conversion from <span className="font-bold text-primary">40.3%</span> to <span className="font-bold text-primary">58.8%</span> with 300K MAU.
-            </p>
-
-            <p>
-              Additionally, I created the{" "}
-              <Link href="#" className="font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary">
-                Memo
-              </Link>{" "}
-              app for learning languages through memes. I also worked at Cuberto agency, which was named the best agency in the world by{" "}
-              <Link href="https://www.awwwards.com" target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary">
-                Awwwards
-              </Link>
-              .
-            </p> */}
           </motion.div>
 
           {/* Telegram Button */}
@@ -83,7 +67,7 @@ export function AboutContent() {
 
         {/* Right Column - Peace Sign Image */}
         <motion.div className="relative flex items-center justify-center lg:justify-end" variants={itemVariants}>
-          <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]">
+          <div className="relative h-75 w-75 md:h-100 md:w-100 lg:h-125 lg:w-125">
             <Image src="/images/riza2.jpeg" alt="Peace sign hand gesture" fill className="object-contain" priority />
           </div>
         </motion.div>
@@ -95,7 +79,7 @@ export function AboutContent() {
 
       {/* Decorative gradient blur effect */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute right-1/4 top-1/2 h-100 w-100 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
       </div>
     </motion.section>
   )
